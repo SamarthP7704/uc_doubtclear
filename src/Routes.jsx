@@ -22,7 +22,7 @@ const Routes = () => {
         <ScrollToTop />
         <RouterRoutes>
           {/* Define your route here */}
-          <Route path="/" element={<AskQuestion />} />
+          <Route path="/" element={<UserRegistration />} />
           <Route path="/student-login" element={<StudentLogin />} />
           <Route path="/ask-question" element={<AskQuestion />} />
           <Route path="/student-dashboard" element={<StudentDashboard />} />
