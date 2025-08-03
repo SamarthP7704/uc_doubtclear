@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-foreground: #1F2937; /* gray-800 */
+    --color-border: #F3F4F6; /* light gray-100 */
+    --color-input: #FFFFFF; /* white */
+    --color-ring: #E31837; /* UC red */
+    
+    /* Card Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #1F2937; /* gray-800 */
+    
+    /* Popover Colors */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #1F2937; /* gray-800 */
+    
+    /* Muted Colors */
+    --color-muted: #F9FAFB; /* very light gray */
+    --color-muted-foreground: #6B7280; /* gray-500 */
+    
+    /* Primary Colors - UC Red Theme */
+    --color-primary: #E31837; /* UC red */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors - White/Light Gray */
+    --color-secondary: #F3F4F6; /* light gray */
+    --color-secondary-foreground: #1F2937; /* gray-800 */
+    
+    /* Accent Colors - Lighter UC Red */
+    --color-accent: #FEF2F2; /* very light red */
+    --color-accent-foreground: #E31837; /* UC red */
+    
+    /* Success Colors */
+    --color-success: #10B981; /* emerald-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-warning-foreground: #1F2937; /* gray-800 */
+    
+    /* Error/Destructive Colors */
+    --color-error: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+    --color-destructive: #DC2626; /* red-600 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 200ms ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 300ms ease-out;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Custom shadows for academic interface */
+  .shadow-card {
+    box-shadow: 0 1px 3px rgba(227, 24, 55, 0.1);
+  }
+
+  .shadow-floating {
+    box-shadow: 0 10px 25px rgba(227, 24, 55, 0.15);
+  }
+
+  /* Backdrop blur for floating elements */
+  .backdrop-blur-soft {
+    backdrop-filter: blur(8px);
+  }
+
+  /* UC-themed gradient backgrounds */
+  .bg-uc-gradient {
+    background: linear-gradient(135deg, #E31837 0%, #B91C3C 100%);
+  }
+
+  .bg-uc-gradient-light {
+    background: linear-gradient(135deg, #FEF2F2 0%, #FFFFFF 100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
